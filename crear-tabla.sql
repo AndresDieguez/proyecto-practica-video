@@ -24,3 +24,5 @@ RENAME TABLE clientes TO usuarios;
 ALTER TABLE usuarios CHANGE apellido apellidos VARCHAR(150) null; /* renombrar una columna CHANGE nombre_antiguo nombre_nuevo tipo */
 ALTER TABLE usuarios MODIFY apellidos VARCHAR(200) not null; /* Modificar columna longitud de apellidos a 200 */
 ALTER TABLE usuarios ADD COLUMN edad INT null; /* Agregar columna edad */
+ALTER TABLE usuarios DROP COLUMN fecha_creacion; /* Eliminar columna fecha_creacion */
+ALTER TABLE usuarios ADD CONSTRAINT email_unico UNIQUE (email); /* Agregar restricción de unicidad a la columna email */
