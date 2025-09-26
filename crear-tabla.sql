@@ -19,6 +19,8 @@ CREATE TABLE usuarios (
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE usuarios CHANGE apellido apellidos VARCHAR(150) null;
-ALTER TABLE usuarios ADD COLUMN edad(3) INT null;
-ALTER TABLE usuarios MODIFY apellidos VARCHAR(200) not null;
+RENAME TABLE usuarios TO clientes;
+RENAME TABLE clientes TO usuarios;
+ALTER TABLE usuarios CHANGE apellido apellidos VARCHAR(150) null; /* renombrar una columna CHANGE nombre_antiguo nombre_nuevo tipo */
+ALTER TABLE usuarios MODIFY apellidos VARCHAR(200) not null; /* Modificar columna longitud de apellidos a 200 */
+ALTER TABLE usuarios ADD COLUMN edad INT null; /* Agregar columna edad */
